@@ -1,6 +1,8 @@
-const io = require('socket.io')(5500, {
+var PORT = process.env.PORT || 5500;
+
+const io = require('socket.io')(PORT, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://insta-clone-front-end.herokuapp.com/',
   },
   autoConnect: false,
 });
