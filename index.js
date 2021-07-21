@@ -1,15 +1,15 @@
 var PORT = process.env.PORT || 5500;
 
-io.configure(function () {
-  io.set('transports', ['xhr-polling']);
-  io.set('polling duration', 10);
-});
-
 const io = require('socket.io')(PORT, {
   cors: {
     origin: 'https://insta-clone-front-end.herokuapp.com/',
   },
   autoConnect: false,
+});
+
+io.configure(function () {
+  io.set('transports', ['xhr-polling']);
+  io.set('polling duration', 10);
 });
 
 let users = [];
